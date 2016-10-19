@@ -10,7 +10,7 @@ class SearchController < ApplicationController
       req.params['limit'] = 10
     end
     raw_fuel_stations = JSON.parse(res.body, :symbolize_names=>true)[:fuel_stations]
-    @fuel_stations = raw_fuel_stations.each do |station|
+    @fuel_stations = raw_fuel_stations.map do |station|
       FuelStation.new(station)
     end
   end

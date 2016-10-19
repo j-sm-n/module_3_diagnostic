@@ -17,8 +17,6 @@ describe "User Zip Code Search" do
       # And the stations should be limited to Electric and Propane
       # And for each of the stations I should see Name, Address, Fuel Types, Distance, and Access Times
       save_and_open_page
-      expect(page).to have_content("Propane")
-      expect(page).to have_content("Electric")
       expect(page).to have_content("1. Name: UDR")
       expect(page).to have_content("Distance: 0.3117 miles")
     end

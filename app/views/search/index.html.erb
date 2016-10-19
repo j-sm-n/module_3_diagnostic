@@ -1,10 +1,13 @@
+<div class="container">
 <h1>Search Results For: <%= @zip_code %></h1>
-<ul>
-  <% @fuel_stations.each do |station| %>
-    <li>1. Name: <%= station.name %></li>
-    <li>2. Address: <%= station.address %></li>
-    <li>3. Fuel Types: <%= station.fuel_types %></li>
-    <li>4. Distance: <%= station.distance %> miles</li>
-    <li>5. Access Times: <%= station.access_times %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @fuel_stations.each do |station| %>
+      <li>1. Name: <%= station.name %></li>
+      <li>2. Address: <%= station.address %></li>
+      <li>3. Fuel Types: <%= station.fuel_types %></li>
+      <li>4. Distance: <%= station.distance %> miles</li>
+      <li>5. Access Times: <%= station.access_times %></li>
+      <br />
+    <% end %>
+  </ul>
+</div>

@@ -1,5 +1,7 @@
 class SearchController < ApplicationController
   def index
+    @zip_code = params['q']
+
     res = conn.get do |req|
       req.params['api_key'] = ENV['NREL_API_KEY']
       req.params['location'] = params['q']
@@ -8,8 +10,9 @@ class SearchController < ApplicationController
       req.params['limit'] = 10
     end
     raw_fuel_stations = JSON.parse(res.body, :symbolize_names=>true)[:fuel_stations]
-
-    @zip_code = params['q']
+    @fuel_stations = raw_fuel_stations.each do |station|
+      FuelStation.new(station)
+    end
   end
 
   def conn

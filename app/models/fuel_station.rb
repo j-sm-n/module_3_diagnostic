@@ -10,6 +10,6 @@ class FuelStation
     @address = station_attr[:street_address]
     @fuel_types = station_attr[:fuel_type_code]
     @distance = station_attr[:distance]
-    @access_times = station_attr[:access_days_times]
+    @access_times = station_attr[:access_days_time]
   end
 end
